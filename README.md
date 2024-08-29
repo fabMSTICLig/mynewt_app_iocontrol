@@ -42,7 +42,12 @@ See the readme in the app directory for details on creating new mynewt targets f
 
 Building the hex file
 ```
-./hex_maker.sh wbasev2_bootloader # only on time per base
+sudo apt install srecord
+newt updrage
+#comment line 254 of repos/mcuboot/boot/mynewt/src/main.c
+vim repos/mcuboot/boot/mynewt/src/main.c
+
+./hex_maker.sh boot # only on time per base
 
 ./hex_maker.sh wbasev2_io_eu868_river_prod
 ```
@@ -55,6 +60,12 @@ This will generate a config_DEVEUI.hex file that you will flash after the main h
 
 
 You can generate multiple config file with `genconfig.sh`. You must create a file with the APPKEY, one APPKEY per line. Then edit the genconfig.sh. This will call flash_config.sh multiple time with the generated DEVEUI and the APPKEY from the file.
+
+```
+#genrate 10 appkeys
+CNT=10
+(for (( c=1; c<=$CNT; c++ )); do openssl rand -hex 16 ; done) > keys.txt
+```
 
 # MyNewt project structure
 A quick overview..

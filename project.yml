@@ -36,7 +36,7 @@ repository.apache-mynewt-core:
     vers: 0.0.0
     user: brianwyld
     url:  https://github.com/brianwyld/mynewt-core.git
-#    repo: mynewt-core
+    repo: mynewt-core
 
 repository.mcuboot:
     type: github
@@ -57,8 +57,8 @@ repository.wyres-gitlab-mynewt-bsp:
 repository.lorawan:
     type: github
     vers: 0.0.0
-    user: ygaklk
-    repo: lorawan-api
+    user: wyres
+    repo: mynewt-lorawan
     url: 'https://github.com/wyres/mynewt-lorawan.git'
 
 repository.generic:
